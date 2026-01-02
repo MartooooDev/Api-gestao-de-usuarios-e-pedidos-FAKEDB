@@ -7,10 +7,11 @@ const { getTotalRevenue } = require('../services/orderService');
 // Ticket médio
 
 function getTotalSold(orders) {
-    return (orders.reduce( 
-        (total, order) => {
-            return (total + order.total);
-        }, 0));
+    return (
+        orders
+        .filter(order => order.paid)
+        .reduce((total, order) => total += order.total, 0)
+    );
 }
 
 function getTotalPaidOrders(orders) {
@@ -25,6 +26,8 @@ function getTotalPaidOrders(orders) {
 
 function getTicketMedio(orders) {
     let amountOfPaidOrders = getTotalPaidOrders(orders);
+    if (amountOfPaidOrders === 0) return 0
+
     let totalRevenue = getTotalRevenue(orders);
 
     //Ticket médio = valor total vendido ÷ quantidade de pedidos pagos
