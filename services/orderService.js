@@ -18,16 +18,18 @@ function getTotalRevenue(orders) {  // OK
     //     }
     // , 0);
 
-    return orders
-    .filter(order => order.paid)
-    .reduce(
-        (value, order) => value += order.total, 0);
+    return (
+        orders
+        .filter(order => order.paid)
+        .reduce(
+            (value, order) => value += order.total, 0)
+    );
 }
 
 function getOrdersByUser(orders, userId) {  // OK 
     return orders.filter(
         order =>
-            order.userId == userId
+            order.userId === userId
     );
 }
 
