@@ -8,22 +8,31 @@ function getPaidOrders(orders) {    // OK
 }
 
 function getTotalRevenue(orders) {  // OK
-    return orders.reduce(
-        (value, order) => {
-            if (order.paid === true) {
-                value += order.total
-            }
+    // return orders.reduce(
+    //     (value, order) => {
+    //         if (order.paid === true) {
+    //             value += order.total
+    //         }
 
-            return value;
-        }
-    , 0);
+    //         return value;
+    //     }
+    // , 0);
+
+    return orders
+    .filter(order => order.paid)
+    .reduce(
+        (value, order) => value += order.total, 0);
 }
 
-function getOrdersByUser(orders, userId) {  //
+function getOrdersByUser(orders, userId) {  // OK 
     return orders.filter(
         order =>
             order.userId == userId
     );
 }
 
-console.log(getOrdersByUser(orders, 1));
+module.exports = { 
+    getPaidOrders,
+    getTotalRevenue,
+    getOrdersByUser,
+};
