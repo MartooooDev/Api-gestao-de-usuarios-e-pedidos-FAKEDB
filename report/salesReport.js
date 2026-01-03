@@ -1,10 +1,4 @@
-const users = require('../data/users');
-const orders = require('../data/orders');
 const { getTotalRevenue } = require('../services/orderService');
-
-// Total vendido
-// Total de pedidos pagos
-// Ticket médio
 
 function getTotalSold(orders) {
     return (
@@ -30,7 +24,7 @@ function getTicketMedio(orders) {
 
     let totalRevenue = getTotalRevenue(orders);
 
-    //Ticket médio = valor total vendido ÷ quantidade de pedidos pagos
+    //Ticket médio = valor total de vendas ÷ quantidade de pedidos pagos
 
     return totalRevenue / amountOfPaidOrders;
 }

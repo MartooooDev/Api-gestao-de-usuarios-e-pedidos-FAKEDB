@@ -1,23 +1,10 @@
-const orders = require('../data/orders');
-// console.log(orders);
-
-function getPaidOrders(orders) {    // OK
+function getPaidOrders(orders) {
     return orders.filter(
         order => order.paid === true
     );
 }
 
-function getTotalRevenue(orders) {  // OK
-    // return orders.reduce(
-    //     (value, order) => {
-    //         if (order.paid === true) {
-    //             value += order.total
-    //         }
-
-    //         return value;
-    //     }
-    // , 0);
-
+function getTotalRevenue(orders) {
     return (
         orders
         .filter(order => order.paid)
@@ -26,7 +13,7 @@ function getTotalRevenue(orders) {  // OK
     );
 }
 
-function getOrdersByUser(orders, userId) {  // OK 
+function getOrdersByUser(orders, userId) { 
     return orders.filter(
         order =>
             order.userId === userId

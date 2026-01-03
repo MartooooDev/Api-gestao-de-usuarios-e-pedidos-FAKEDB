@@ -1,6 +1,11 @@
-const users = require('../data/users');
-
 function getActiveUsers(users) {
+    return users.filter(
+        user => 
+            user.active === true
+    );
+}
+
+function getActiveNonAdminUsers(users) {
     return users.filter(
         user => 
             user.active === true && user.role === 'user'

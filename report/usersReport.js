@@ -1,9 +1,3 @@
-const users = require('../data/users');
-const orders = require('../data/orders');
-
-// Quantidade por role
-// Usuários ativos vs inativos
-
 function countUsersPerRole(users) {
     return users.reduce(
         (roles, user) => {
@@ -16,7 +10,7 @@ function countUsersPerRole(users) {
             }
 
             return roles;
-        }, {}
+        }, {admin: 0, user: 0}
     );
 }
 
