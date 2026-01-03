@@ -9,7 +9,7 @@ function getTotalRevenue(orders) {
         orders
         .filter(order => order.paid)
         .reduce(
-            (value, order) => value += order.total, 0)
+            (value, order) => value + order.total, 0)
     );
 }
 

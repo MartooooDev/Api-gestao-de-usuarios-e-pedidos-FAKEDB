@@ -16,7 +16,7 @@ function getAdmins(users) {
     return users.filter(user => user.role === 'admin')
 }
 
-function getUsernamesUppercase(users) {
+function getUserNamesUppercase(users) {
     return users.map(
         user => 
             user.name.toUpperCase()
