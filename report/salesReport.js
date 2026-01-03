@@ -4,7 +4,7 @@ function getTotalSold(orders) {
     return (
         orders
         .filter(order => order.paid)
-        .reduce((total, order) => total += order.total, 0)
+        .reduce((total, order) => total + order.total, 0)
     );
 }
 

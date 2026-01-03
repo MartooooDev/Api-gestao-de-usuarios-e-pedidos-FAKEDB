@@ -26,7 +26,7 @@ function countActiveUsers(users) {
             }
 
             return statuses
-        }, {}
+        }, { active: 0, inactive: 0 }
     );
 }
 
